@@ -12,16 +12,17 @@
 
 class Grafo {
 public:
-    Grafo();
-    Grafo(int numero_nodos);
-    Grafo(std::string nombrefichero);
+
+    explicit Grafo(const std::string& nombrefichero);
 
     virtual ~Grafo()= default;
 
+    int getNNodos() const;
+
 private:
-    int N_nodos_;
+    int N_nodos_{};
     std::vector<std::vector<double>> Transiciones_;
-    void Reseptor_transiciones(std::ifstream is);
+    void Reseptor_transiciones(std::ifstream &is);
 
     void Rellenar_transiciones(int i, int j, double data);
 };

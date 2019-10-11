@@ -3,4 +3,4 @@ project(Pr1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Pr1 src/main.cpp src/Grafo.cpp src/Grafo.h)
+add_executable(Pr1 src/main.cpp src/Grafo.cpp src/Grafo.h src/BusquedaAEstrella.cpp src/BusquedaAEstrella.h)
