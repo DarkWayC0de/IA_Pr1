@@ -56,3 +56,11 @@ Transiciones_ [j][i] = data;
 int Grafo::getNNodos() const {
     return N_nodos_;
 }
+
+const std::vector<std::vector<double>> &Grafo::getTransiciones() const {
+    return Transiciones_;
+}
+
+void Grafo::setTransiciones(const std::vector<std::vector<double>> &transiciones) {
+    Transiciones_ = transiciones;
+}

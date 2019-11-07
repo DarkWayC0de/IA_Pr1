@@ -19,9 +19,15 @@ public:
 
     int getNNodos() const;
 
+    const std::vector<std::vector<double>> &getTransiciones() const;
+
+    void setTransiciones(const std::vector<std::vector<double>> &transiciones);
+
 private:
-    int N_nodos_{};
+    int N_nodos_;
+
     std::vector<std::vector<double>> Transiciones_;
+
     void Reseptor_transiciones(std::ifstream &is);
 
     void Rellenar_transiciones(int i, int j, double data);
