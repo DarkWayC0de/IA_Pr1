@@ -9,18 +9,29 @@
 #include "Grafo.h"
 #include "NodoArbol.h"
 #include "Arbol.h"
+struct Resultado{
+  double costeminimo;
+  std::vector<unsigned> caminominimo;
+  unsigned generados;
+  unsigned analizados;
+  unsigned profundidad;
+};
 
 class BusquedaAEstrella {
  public:
     BusquedaAEstrella(const std::string& NombreFicheroGrafo, const std::string& NombreFicheroHeuristica);
     ~BusquedaAEstrella();
-    std::pair<double ,std::vector<unsigned >> realizarBusquedaAEstrella(unsigned origen, unsigned destino);
+     Resultado realizarBusquedaAEstrella(unsigned origen, unsigned destino);
 
  private:
     Grafo Grafo_problema_;
     std::vector<double> Heuristica_Problema_;
+    unsigned Nodosgenerados_;
+    unsigned Nodosanalizados_;
+    unsigned Profundidad_;
     unsigned Origen_;
     Arbol arbol_;
+
     void cargar_datos_heuristica(const std::string& NombreFicheroHeuristica);
     std::vector<std::shared_ptr<NodoArbol>> generarHijos(const std::shared_ptr<NodoArbol>& padre,
                                                          std::set<std::shared_ptr<NodoArbol>>& nodosAEvaluar);
@@ -38,6 +49,7 @@ class BusquedaAEstrella {
   std::shared_ptr<NodoArbol> extraeelmejor(std::set<std::shared_ptr<NodoArbol>> &nodosAEvaluar);
 
 };
+
 
 
 #endif //PR1_BUSQUEDAAESTRELLA_H
