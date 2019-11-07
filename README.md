@@ -1,11 +1,11 @@
 ## Práctica de Busqueda Inteligencia Artificial
-####Objetivo
+#### Objetivo
 Diseñar e implentar una búsqueda A* para el problema del camino mínimo entre dos vértices de un grafo.
     -Debe poder inicarse, cómodamente, cuáles son los vértices origen y destino
 
 Analizar el comportamiento de la busqueda A* considerando diferentes funciones heurísticas.
 
-####Material a presentar
+#### Material a presentar
 Código fuente, debidamente comentado, y fichero ejecutable.
 
 Una memoria en formato pdf con una descripcion de la busqueda A* diseñada, enumerando las estructuras de datos usadas y
