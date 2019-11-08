@@ -5,6 +5,8 @@
 #include <fstream>
 #include <iostream>
 #include <cfloat>
+#include <cstdlib>
+#include <time.h>
 #include "BusquedaAEstrella.h"
 
 
@@ -221,4 +223,62 @@ std::shared_ptr<NodoArbol> BusquedaAEstrella::extraeelmejor(std::set<std::shared
   std::shared_ptr<NodoArbol> elmejornodo = *mejor;
   nodosAEvaluar.erase(mejor);
   return elmejornodo;
+}
+Resultado BusquedaAEstrella::realizarBusquedaAEstrellaModificacion(unsigned origen, unsigned destino) { //TODO Modificacion
+  std::srand(time(NULL));                                                //arancamos el generador de aleatorios
+  this -> Origen_ = origen;
+  unsigned const noCoste = 0;
+  unsigned const noProfundidad = 0;
+  std::shared_ptr<NodoArbol> raiz_ = std::make_shared<NodoArbol>();
+  raiz_ -> setId(origen);
+  raiz_ -> setHeuristicaEstado(this -> Heuristica_Problema_[origen]);  //inicializamos raiz 229-237
+  raiz_ -> setCosteAcumulado(noCoste);
+  raiz_ -> setPadre(nullptr);
+  raiz_ -> setProfundidad(noProfundidad);
+  Nodosgenerados_++;                                                          //contamos la raiz como generado
+  auto costeMinimoActual = DBL_MAX;                           //creamos variables para el minimo de las 10 veces
+  std::vector<unsigned> caminofinal;
+  for (int i = 0; i <11 ; ++i) {                              //realiza las 10 repeticiones
+    auto costeMinimoPorbusqueda = DBL_MAX;                    //coste minimo de esta buqueda
+    std::set<std::shared_ptr<NodoArbol>> nodosAEvaluar;       //estructura de datos que guardara entre los nodos a escoger
+    std::vector<unsigned> camino;
+    raiz_->setHijos(generarHijos(raiz_, nodosAEvaluar));    //generamos los hijos de la raiz
+    int numero_aleatorio = rand() % nodosAEvaluar.size();             //entre las posibilidades de nodos elejimos uno
+    for (auto k = nodosAEvaluar.begin(); k != nodosAEvaluar.end(); ++k) {
+      if (numero_aleatorio == 0) {          //entramos a la posivildad elegida con aleatorio
+        analisisrecursivo(*k, destino, costeMinimoPorbusqueda, camino);
+      }
+      numero_aleatorio--;
+    }
+    if(costeMinimoActual>costeMinimoPorbusqueda){  //tras realizar la busqueda comprobamos que el camino obtenido sea mejor
+      costeMinimoActual=costeMinimoPorbusqueda;    //que otro posible que ya puderamos tener en caso afirmativo lo guardamos
+      caminofinal =camino;
+    }
+  }
+  Resultado resultado;                                //guardamos los datos y devolvemos valores linea 258-265
+  resultado.costeminimo = costeMinimoActual;
+  resultado.caminominimo =caminofinal;
+  resultado.generados = this -> Nodosgenerados_;
+  resultado.analizados= this-> Nodosanalizados_;
+  resultado.profundidad= this->Profundidad_;
+  this -> arbol_.SetRaiz(raiz_);
+  return resultado;
+}
+
+void BusquedaAEstrella::analisisrecursivo(const std::shared_ptr<NodoArbol> &nodo,
+                                          unsigned int destino,
+                                          double &coste,
+                                          std::vector<unsigned int>& camino) {   //TODO Funcion nueva modificacion
+  Nodosanalizados_++;   //sumamos uno a analizados
+  if (nodo->getId() ==destino){     //si es el destino guardamos  su coste y camino
+    coste = nodo -> getCosteAcumulado();
+    camino = nodospadre(nodo);
+  }else{                                      //en caso contrario
+    std::set<std::shared_ptr<NodoArbol>> nodosAEvaluar; //estructura para guaradar la posibilidades de continucion
+    nodo->setHijos(generarHijos(nodo, nodosAEvaluar));  //generamos las posibles continuaciones
+    if (!nodosAEvaluar.empty()) {                                //si no existen continuciones terminamos y en caso de que si existan
+      std::shared_ptr<NodoArbol> nodoAEvaluar = extraeelmejor(nodosAEvaluar);   //extraemos la mejor segun coste+ heuristica
+      analisisrecursivo(nodoAEvaluar,destino,coste,camino);    //analizamos recursivamente la mejor extraida
+    }
+  }
 }

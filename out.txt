@@ -1,98 +1,38 @@
 Práctica de Busqueda A* Inteligencia Artificial
 -----------------------------------------------
-Fichero del grafo: Grafo
-Fichero de heuristica: heuristica_O1F5
-Origen: 1
-Destino: 5
-Distancia: 3.65
-Camino: 1 --> 2 --> 5
-Nodos generados: 5
-Nodos analizados: 4
-Profundidad Total del arbol: 2
----------------------------------------------
-Fichero del grafo: Grafo1
-Fichero de heuristica: Grafo1Heuristica
+Fichero del grafo: GrafoCorrec1.txt
+Fichero de heuristica: GrafoCorrec1Heur.txt
 Origen: 1
 Destino: 8
-Distancia: 43
-Camino: 1 --> 2 --> 4 --> 12 --> 5 --> 13 --> 8
-Nodos generados: 104
-Nodos analizados: 75
-Profundidad Total del arbol: 8
+Distancia:  Fallo
+Nodos generados: 90
+Nodos analizados: 42
+Profundidad Total del arbol: 6
 ---------------------------------------------
-Fichero del grafo: Grafo1
-Fichero de heuristica: Grafo1Heuristica2
-Origen: 1
-Destino: 8
-Distancia: 43
-Camino: 1 --> 2 --> 4 --> 12 --> 5 --> 13 --> 8
-Nodos generados: 104
-Nodos analizados: 75
-Profundidad Total del arbol: 8
----------------------------------------------
-Fichero del grafo: Grafo2.txt
-Fichero de heuristica: Grafo2Heuristica1.txt
+Fichero del grafo: GrafoCorrec2.txt
+Fichero de heuristica: GrafoCorrec2Heur.txt
 Origen: 2
 Destino: 14
-Distancia: 41
-Camino: 2 --> 4 --> 12 --> 5 --> 13 --> 8 --> 14
-Nodos generados: 90
-Nodos analizados: 66
-Profundidad Total del arbol: 8
-Fichero del grafo: Grafo2.txt
-Fichero de heuristica: Grafo2Heuristica2.txt
-Origen: 2
-Destino: 14
-Distancia: 41
-Camino: 2 --> 4 --> 12 --> 5 --> 13 --> 8 --> 14
-Nodos generados: 90
-Nodos analizados: 66
-Profundidad Total del arbol: 8
+Distancia:  Fallo
+Nodos generados: 98
+Nodos analizados: 45
+Profundidad Total del arbol: 5
 ---------------------------------------------
-Fichero del grafo: Grafo3.txt
-Fichero de heuristica: Grafo3Heuristica1.txt
+Fichero del grafo: GrafoCorrec3.txt
+Fichero de heuristica: GrafoCorrec3Heur.txt
 Origen: 1
 Destino: 15
-Distancia: 40
-Camino: 1 --> 2 --> 4 --> 8 --> 16 --> 15
-Nodos generados: 65
-Nodos analizados: 49
-Profundidad Total del arbol: 7
-Fichero del grafo: Grafo3.txt
-Fichero de heuristica: Grafo3Heuristica2.txt
-Origen: 1
-Destino: 15
-Distancia: 40
-Camino: 1 --> 2 --> 4 --> 8 --> 16 --> 15
-Nodos generados: 65
-Nodos analizados: 49
-Profundidad Total del arbol: 7
+Distancia:  Fallo
+Nodos generados: 98
+Nodos analizados: 43
+Profundidad Total del arbol: 5
 ---------------------------------------------
-Fichero del grafo: Grafo4.txt
-Fichero de heuristica: Grafo4Heuristica1.txt
+Fichero del grafo: GrafoCorrec4.txt
+Fichero de heuristica: GrafoCorrec4Heur.txt
 Origen: 10
 Destino: 18
-Distancia: 31
-Camino: 10 --> 5 --> 3 --> 2 --> 4 --> 18
-Nodos generados: 34
-Nodos analizados: 22
-Profundidad Total del arbol: 6
-Fichero del grafo: Grafo4.txt
-Fichero de heuristica: Grafo4Heuristica2.txt
-Origen: 10
-Destino: 18
-Distancia: 31
-Camino: 10 --> 5 --> 3 --> 2 --> 4 --> 18
-Nodos generados: 34
-Nodos analizados: 22
-Profundidad Total del arbol: 6
+Distancia:  Fallo
+Nodos generados: 77
+Nodos analizados: 35
+Profundidad Total del arbol: 5
 ---------------------------------------------
-Fichero del grafo: GrafoRumania.txt
-Fichero de heuristica: GrafoRumaniaHeuristica.txt
-Origen: 1
-Destino: 2
-Distancia: 540
-Camino: 1 --> 20 --> 15 --> 3 --> 14 --> 2
-Nodos generados: 22
-Nodos analizados: 17
-Profundidad Total del arbol: 6

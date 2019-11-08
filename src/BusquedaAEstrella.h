@@ -22,6 +22,7 @@ class BusquedaAEstrella {
     BusquedaAEstrella(const std::string& NombreFicheroGrafo, const std::string& NombreFicheroHeuristica);
     ~BusquedaAEstrella();
      Resultado realizarBusquedaAEstrella(unsigned origen, unsigned destino);
+     Resultado realizarBusquedaAEstrellaModificacion(unsigned int origen, unsigned int destino);//TODO se creo para la modficacion
  private:
     Grafo Grafo_problema_;
     std::vector<double> Heuristica_Problema_;
@@ -44,6 +45,11 @@ class BusquedaAEstrella {
 
     std::vector<unsigned int> nodospadre(std::shared_ptr<NodoArbol>const &nodo);
     std::shared_ptr<NodoArbol> extraeelmejor(std::set<std::shared_ptr<NodoArbol>> &nodosAEvaluar);
+
+  void analisisrecursivo(const std::shared_ptr<NodoArbol> &nodo,
+                         unsigned int destino,
+                         double &coste,
+                         std::vector<unsigned int> &camino); //TODO Funcion nueva modificacion
 };
 
 

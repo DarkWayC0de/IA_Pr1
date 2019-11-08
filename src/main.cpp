@@ -18,7 +18,7 @@ int main() {
   std::cin>>origen;
   std::cout<<"Introduce destino de la busqueda: ";
   std::cin>>destino;
-  auto resultado = Busqueda.realizarBusquedaAEstrella(origen-1, destino -1);
+  auto resultado = Busqueda.realizarBusquedaAEstrellaModificacion(origen-1, destino -1);
   std::cout<<"Distancia: "<<resultado.costeminimo<<"\n"
              "Camino: ";
 
