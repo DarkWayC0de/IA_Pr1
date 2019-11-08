@@ -9,7 +9,7 @@
 #include "Grafo.h"
 #include "NodoArbol.h"
 #include "Arbol.h"
-struct Resultado{
+struct Resultado{  //Estructura encapsuladora de resultados  de la buqueda
   double costeminimo;
   std::vector<unsigned> caminominimo;
   unsigned generados;
@@ -22,7 +22,6 @@ class BusquedaAEstrella {
     BusquedaAEstrella(const std::string& NombreFicheroGrafo, const std::string& NombreFicheroHeuristica);
     ~BusquedaAEstrella();
      Resultado realizarBusquedaAEstrella(unsigned origen, unsigned destino);
-
  private:
     Grafo Grafo_problema_;
     std::vector<double> Heuristica_Problema_;
@@ -31,23 +30,20 @@ class BusquedaAEstrella {
     unsigned Profundidad_;
     unsigned Origen_;
     Arbol arbol_;
-
     void cargar_datos_heuristica(const std::string& NombreFicheroHeuristica);
     std::vector<std::shared_ptr<NodoArbol>> generarHijos(const std::shared_ptr<NodoArbol>& padre,
                                                          std::set<std::shared_ptr<NodoArbol>>& nodosAEvaluar);
-    std::pair<double ,std::vector<unsigned >> analizarGenerarArbol(std::shared_ptr<NodoArbol> &nodo,
+    std::pair<double ,std::vector<unsigned >> analizarGenerarArbol(std::shared_ptr<NodoArbol> &raiz,
                                                                     unsigned destino);
     void  analizarGenerarArbolRecursivo(std::shared_ptr<NodoArbol> &nodo,
                                         unsigned destino,
                                         double &costeMinimoActual,
                                         std::set<std::shared_ptr<NodoArbol>> &nodosAEvaluar,
                                         std::vector<unsigned >& camino);
-
-    bool pertenese(unsigned int elemento, const std::vector<unsigned int>& conjunto);
+    bool pertenece(unsigned int elemento, const std::vector<unsigned int>& conjunto);
 
     std::vector<unsigned int> nodospadre(std::shared_ptr<NodoArbol>const &nodo);
-  std::shared_ptr<NodoArbol> extraeelmejor(std::set<std::shared_ptr<NodoArbol>> &nodosAEvaluar);
-
+    std::shared_ptr<NodoArbol> extraeelmejor(std::set<std::shared_ptr<NodoArbol>> &nodosAEvaluar);
 };
 
 

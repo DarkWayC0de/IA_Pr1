@@ -18,7 +18,6 @@ class Arbol {
 
  private:
     std::shared_ptr<NodoArbol> Raiz_;
-    void destruir(std::shared_ptr<NodoArbol>  raiz);
 };
 
 

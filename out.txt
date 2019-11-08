@@ -7,7 +7,7 @@ Destino: 5
 Distancia: 3.65
 Camino: 1 --> 2 --> 5
 Nodos generados: 5
-Nodos analizados: 5
+Nodos analizados: 4
 Profundidad Total del arbol: 2
 ---------------------------------------------
 Fichero del grafo: Grafo1

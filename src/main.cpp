@@ -3,7 +3,7 @@
 
 
 int main() {
-  std::string const  CARPTETADATA = "../data/";
+  std::string const  CARPTETADATA = "../data/";  //Ruta de carpeta de datos
   std::string ficherografo;
   std::string ficheroheuristica;
   int origen,destino;
@@ -22,7 +22,7 @@ int main() {
   std::cout<<"Distancia: "<<resultado.costeminimo<<"\n"
              "Camino: ";
 
-  for (int i = resultado.caminominimo.size()-1; i >0 ; --i) {
+  for (auto i = resultado.caminominimo.size()-1; i >0 ; --i) {
     std::cout<<resultado.caminominimo[i] +1<<" --> ";
   }
   std::cout<<resultado.caminominimo[0] + 1<<"\n";
